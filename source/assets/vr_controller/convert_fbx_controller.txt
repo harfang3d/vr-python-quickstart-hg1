@@ -1,0 +1,2 @@
+cd C:\boulot\works\ViewerVR\source
+fbx_converter\fbx_converter_bin.exe "D:\works_2\works_2_3\vr_fbx_files\controler_used_arrow.FBX" -fix-geometry-orientation -o vr_controller/ -material-policy overwrite -geometry-policy overwrite -texture-policy overwrite -scene-policy overwrite -detect-geometry-instances -calculate-normal-if-missing -calculate-tangent-if-missing -finalizer-script "C:\boulot\works\ViewerVR\source\fbx_converter\fbx_finalizer_script.lua"

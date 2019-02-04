@@ -1,0 +1,67 @@
+{
+	"Material": {
+		"Shader": "@assets/vr_controller/diffuse_map_normal_map_parallax_map.isl",
+		"MaterialValues": {
+			"Value": {
+				"Name": "diffuse_map",
+				"Type": "tex2D",
+				"Value": "@assets/vr_controller/_vr_controller_vive_1_5default_Diffuse.png",
+				"WrapU": "Repeat",
+				"WrapV": "Repeat",
+				"MinFilter": "Anisotropic",
+				"MagFilter": "Anisotropic"
+			},
+			"Value": {
+				"Name": "light_map",
+				"Type": "tex2D",
+				"Value": "@assets/vr_controller/_vr_controller_vive_1_5default_Mixed_AO.png",
+				"WrapU": "Repeat",
+				"WrapV": "Repeat",
+				"MinFilter": "Anisotropic",
+				"MagFilter": "Anisotropic"
+			},
+			"Value": {
+				"Name": "specular_map",
+				"Type": "tex2D",
+				"Value": "@assets/vr_controller/_vr_controller_vive_1_5default_Specular.png",
+				"WrapU": "Repeat",
+				"WrapV": "Repeat",
+				"MinFilter": "Anisotropic",
+				"MagFilter": "Anisotropic"
+			},
+			"Value": {
+				"Name": "glossiness_map",
+				"Type": "tex2D",
+				"Value": "@assets/vr_controller/_vr_controller_vive_1_5default_Glossiness.png",
+				"WrapU": "Repeat",
+				"WrapV": "Repeat",
+				"MinFilter": "Anisotropic",
+				"MagFilter": "Anisotropic"
+			},
+      "Value": {
+        "Name": "normal_map",
+        "Type": "tex2D",
+        "Value": "@assets/vr_controller/_vr_controller_vive_1_5default_Normal.png",
+        "WrapU": "Repeat",
+        "WrapV": "Repeat",
+        "MinFilter": "Anisotropic",
+        "MagFilter": "Anisotropic"
+      },
+			"Value": {
+				"Name": "diffuse_color",
+				"Type": "vec4",
+				"Value": "vec4(0.5880, 0.5880, 0.5880, 1.0000)"
+			},
+			"Value": {
+				"Name": "specular_color",
+				"Type": "vec4",
+				"Value": "vec4(0.0000, 0.0000, 0.0000, 1.0000)"
+			},
+			"Value": {
+				"Name": "self_color",
+				"Type": "vec4",
+				"Value": "vec4(0.0000, 0.0000, 0.0000, 1.0000)"
+			}
+		}
+	}
+}

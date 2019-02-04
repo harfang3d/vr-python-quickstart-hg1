@@ -1,0 +1,263 @@
+{
+	"Scene": {
+		"Components": {
+			"Environment": {
+				"AmbientColor": {
+					"b": 0.5842,
+					"g": 0.026,
+					"r": 0.3272
+				},
+				"BackgroundColor": {
+					"b": 1.0,
+					"g": 0.8698,
+					"r": 0.6726
+				},
+				"FogColor": {
+					"b": 1.0,
+					"g": 0.8706,
+					"r": 0.6747
+				},
+				"FogFar": 100.0,
+				"FogNear": 30.0
+			}
+		},
+		"Nodes": {
+			"Node": {
+				"Uid": 1,
+				"Name": "Lamp.001",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": -2.5054,
+							"y": 19.6145,
+							"z": -14.6333
+						},
+						"Rotation": {
+							"x": 0.044,
+							"y": -0.294,
+							"z": -0.0171
+						}
+					},
+					"Light": {
+						"ConeAngle": 0.0,
+						"DiffuseColor": {
+							"b": 0.4127,
+							"g": 0.7187,
+							"r": 1.0
+						},
+						"EdgeAngle": 0.7854,
+						"ShadowRange": 0.0,
+						"SpecularColor": {
+							"b": 0.4127,
+							"g": 0.7187,
+							"r": 1.0
+						},
+						"SpecularIntensity": 3.0
+					}
+				}
+			},
+			"Node": {
+				"Uid": 2,
+				"Name": "Sphere.001",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": 10.1659,
+							"y": 1.327,
+							"z": -11.1998
+						},
+						"Rotation": {
+							"x": -0.0003,
+							"y": -0.0019,
+							"z": -0.1093
+						}
+					},
+					"Object": {
+						"Geometry": "assets/geometrics/Sphere.001.geo"
+					}
+				}
+			},
+			"Node": {
+				"Uid": 3,
+				"Name": "Sphere",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": -30.2151,
+							"y": 1.8069,
+							"z": 40.0698
+						},
+						"Rotation": {
+							"x": -0.0003,
+							"y": -0.0019,
+							"z": -0.1092
+						},
+						"Scale": {
+							"x": 1.0,
+							"y": 1.0,
+							"z": 1.0
+						}
+					},
+					"Object": {
+						"Geometry": "assets/geometrics/Sphere.geo"
+					}
+				}
+			},
+			"Node": {
+				"Uid": 4,
+				"Name": "Cube.002",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": -7.8336,
+							"y": 1.4719,
+							"z": -3.9563
+						},
+						"Rotation": {
+							"x": 0.0004,
+							"y": -0.0142,
+							"z": -0.0005
+						}
+					},
+					"Object": {
+						"Geometry": "assets/geometrics/Cube.002.geo"
+					}
+				}
+			},
+			"Node": {
+				"Uid": 5,
+				"Name": "Plane",
+				"Components": {
+					"Transform": {
+						"Rotation": {
+							"x": 0.0001,
+							"y": 0.0,
+							"z": 0.0
+						},
+						"Scale": {
+							"x": 10.0,
+							"y": 1.0,
+							"z": 10.0
+						}
+					},
+					"Object": {
+						"Geometry": "assets/geometrics/Plane.geo"
+					}
+				}
+			},
+			"Node": {
+				"Uid": 6,
+				"Name": "Cube",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": -2.2009,
+							"y": 2.329,
+							"z": 2.8516
+						},
+						"Rotation": {
+							"x": 0.0039,
+							"y": -0.0461,
+							"z": -0.3379
+						}
+					},
+					"Object": {
+						"Geometry": "assets/geometrics/Cube.geo"
+					}
+				}
+			},
+			"Node": {
+				"Uid": 7,
+				"Name": "Cube.001",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": -5.3754,
+							"y": 0.9899,
+							"z": 3.1337
+						},
+						"Rotation": {
+							"x": -0.002,
+							"y": -0.0842,
+							"z": -0.0031
+						}
+					},
+					"Object": {
+						"Geometry": "assets/geometrics/Cube.001.geo"
+					}
+				}
+			},
+			"Node": {
+				"Uid": 8,
+				"Name": "Lamp",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": 14.2896,
+							"y": 17.166,
+							"z": -6.7489
+						},
+						"Rotation": {
+							"x": 0.7854,
+							"y": -1.5707,
+							"z": 0.0
+						}
+					},
+					"Light": {
+						"ConeAngle": 0.0,
+						"EdgeAngle": 0.7854,
+						"Model": "Spot",
+						"Range": 100.0,
+						"Shadow": "ShadowMap",
+						"SpecularColor": {
+							"b": 1.0,
+							"g": 1.0,
+							"r": 1.0
+						},
+						"SpecularIntensity": 3.0,
+						"ZNear": 0.1002
+					}
+				}
+			},
+			"Node": {
+				"Uid": 9,
+				"Name": "Main_Camera",
+				"Components": {
+					"Transform": {
+						"Position": {
+							"x": 18.0,
+							"y": 7.0,
+							"z": -20.0
+						},
+						"Rotation": {
+							"x": 0.1151,
+							"y": -0.7821,
+							"z": 0.0
+						},
+						"Scale": {
+							"x": 1.0,
+							"y": 1.0,
+							"z": 1.0
+						}
+					},
+					"Camera": {
+						"ZFar": 100.0,
+						"ZNear": 0.1002,
+						"ZoomFactor": 3.889
+					},
+					"BloomPostProcess": {
+						"Intensity": 0.5
+					}
+				}
+			}
+		},
+		"NodeHierarchy": {},
+		"Skeletons": {},
+		"State": {
+			"CurrentCamera": {
+				"Uid": 9
+			}
+		},
+		"Takes": {}
+	}
+}
