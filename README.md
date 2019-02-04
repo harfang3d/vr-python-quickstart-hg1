@@ -61,3 +61,5 @@ head_mat = cam_matrix * controller_mat
 That's it, you are now VR-enabled right within Python!  
 This tutorial using the HARFANG engine was tested so far on the HTC Vive, the Oculus Rift and the Lenovo Mixer Reality headsets.  
 The same should apply to every OpenVR-compatible headset.
+  
+(Tutorial created by Eric Kernin, VR Teleporter by Thomas Simonnet).
