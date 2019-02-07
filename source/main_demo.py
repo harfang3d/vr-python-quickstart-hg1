@@ -1,5 +1,5 @@
 # -*-coding:Utf-8 -*
-
+"""
 # ===========================================================
 
 #              - HARFANG® 3D - www.harfang3d.com
@@ -9,9 +9,10 @@
 #						VR setup
 
 # ===========================================================
+"""
 
 import harfang as hg
-import math
+import teleporter
 
 # load all plugin for harfang, like VR plugin
 hg.LoadPlugins()
@@ -32,13 +33,20 @@ plus.RenderInit(1024, 1024, 4, hg.Windowed)
 # add a new scene, which is a container of all objects you want to draw/update
 scn = plus.NewScene()
 
-plus.LoadScene(scn,"@assets/geometrics/geometrics.scn")
+plus.LoadScene(scn, "@assets/geometrics/geometrics.scn")
 scn.UpdateAndCommitWaitAll()
-cam=scn.GetCurrentCamera()
-#cam.GetTransform().SetPosition(hg.Vector3(0,0,0))
-#cam.GetTransform().SetRotation(hg.Vector3(0,0,0))
-fps=hg.FPSController(18,7,-15)
-fps.Reset(hg.Vector3(18,7,-15),hg.Vector3(0,math.radians(-60),0))
+cam = scn.GetCurrentCamera()
+pos = cam.GetTransform().GetPosition()
+pos.y = 1.65
+cam.GetTransform().SetPosition(pos)
+
+simple_graphic = hg.SimpleGraphicSceneOverlay(False)
+simple_graphic.SetDepthTest(False)
+simple_graphic.SetBlendMode(hg.BlendAlpha)
+scn.AddComponent(simple_graphic)
+
+teleporter.setup_teleporter(scn, hg.Vector2(200, 200))
+
 # check if there is VR available and Initialise the frame renderer
 
 try:
@@ -86,9 +94,9 @@ while not plus.IsAppEnded():
     # In the scene:     camera mat = calibration center
     # for the rendering: rendering camera = camera mat + headset mat
 
-    fps.UpdateAndApplyToNode(cam, dt_sec)
-
     # update the position of the controllers
+    controller = None
+    flag_controller = False
     for i in range(2):
         # get the controller from the input system
         try:
@@ -97,8 +105,8 @@ while not plus.IsAppEnded():
             controller = None
         try:
             # make sure we have a controller and the nodes
-            if controller is not None and controller_nodes[i].GetTransform() is not None and sphere_touch_nodes[
-                i].GetTransform() is not None:
+            if controller is not None and controller_nodes[i].GetTransform() is not None and sphere_touch_nodes[i].GetTransform() is not None:
+
                 # compute the world matrix of the controller from the position of the camera and the position of the controller in real
                 cam_matrix = scn.GetCurrentCamera().GetTransform().GetWorld()
                 controller_mat = controller.GetMatrix(hg.InputDeviceMatrixHead)
@@ -115,6 +123,16 @@ while not plus.IsAppEnded():
                         hg.Vector3(-6.0 * 3.1415 / 180.0, 0, 0)) * hg.Matrix4.TranslationMatrix(
                         hg.Vector3(x_val * 0.02, 0, y_val * 0.02))
                 sphere_touch_nodes[i].GetTransform().SetWorld(virtual_controller_mat * mat)
+
+            if controller is not None and not flag_controller:
+                flag_controller = True
+                mvt, rot = teleporter.update_camera_teleporter(plus, scn, simple_graphic, cam.GetTransform().GetWorld(),
+                                                               True, controller)
+                if mvt is not None:
+                    cam.GetTransform().SetPosition(mvt)
+                cam_rot = cam.GetTransform().GetRotation()
+                cam_rot.y = cam_rot.y + rot
+                cam.GetTransform().SetRotation(cam_rot)
         except:
             pass
 
@@ -126,4 +144,3 @@ while not plus.IsAppEnded():
     plus.EndFrame()
 
 plus.RenderUninit()
-
