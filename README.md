@@ -5,7 +5,7 @@
 
 ## Requirements
 
-[HARFANG® 3D](https://www.harfang3d.com/) > 1.2.0  
+[HARFANG® 3D](https://www.harfang3d.com/) >= 1.2.0  
 
 On Windows, retrieve HARFANG® 3D using PIP
 ```shell
