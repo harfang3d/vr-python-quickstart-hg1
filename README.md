@@ -2,7 +2,22 @@
 
 ## ![OpenVR](screenshots/openvr.jpg) VR Headset Controller Tutorial
 ![VR_setup](screenshots/Screenshot_3.png)
+
+## Requirements
+
+[HARFANG® 3D](https://www.harfang3d.com/) > 1.2.0  
+
+On Windows, retrieve HARFANG® 3D using PIP
+```shell
+pip install -r requirements.txt
+```
+On others systems, retrieve the last wheel on [HARFANG® 3D](https://www.harfang3d.com/download) website.
+```shell
+pip install harfang.whl
+```
+
 ## Setup
+
 To enable the VR in HARFANG we need to switch to a specific FrameRenderer.  
 First, we ask if the frame renderer plugin called "VR" is available.
 ```python
@@ -18,7 +33,7 @@ scn.GetRenderableSystem().SetFrameRenderer(openvr_frame_renderer)
 ```
 ## Update controllers matrices
 
-HARFANG gives the controllers' matrices in the real world. The matrices relate to the VR calibration position.  
+HARFANG® gives the controllers' matrices in the real world. The matrices relate to the VR calibration position.  
 To set the controllers' matrices in the virtual world, we need to multiply them by the position that represent the calibration center in the scene. From our point of view, this is the camera matrix.  
 
 #### In real world
@@ -59,7 +74,7 @@ head_mat = cam_matrix * controller_mat
 ## Conclusion
 
 That's it, you are now VR-enabled right within Python!  
-This tutorial using the HARFANG engine was tested so far on the HTC Vive, the Oculus Rift and the Lenovo Mixer Reality headsets.  
+This tutorial using the HARFANG® engine was tested so far on the HTC Vive, the Oculus Rift and the Lenovo Mixer Reality headsets.  
 The same should apply to every OpenVR-compatible headset.
   
 (Tutorial created by Eric Kernin, VR Teleporter by Thomas Simonnet).
