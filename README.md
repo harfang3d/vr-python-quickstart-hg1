@@ -1,5 +1,8 @@
 # ![OpenVR](screenshots/harfang_3d_logo.png) HARFANG® 3D 
 
+## WARNING
+This project is aimed at HARFANG® 3D engine version 1.x.x. It is now superseded by [HARFANG® 3D 2.0](https://www.harfang3d.com). Please check the [updated tutorials/code snippets](https://github.com/harfang3d/tutorials-hg2).
+
 ## ![OpenVR](screenshots/openvr.jpg) VR Headset Controller Tutorial
 ![VR_setup](screenshots/Screenshot_3.png)
 
